@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoInference | AI Carbon Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌍 EcoInference</h1>
+            <p>Track the environmental cost of your AI queries in real-time.</p>
+        </header>
+
+        <div class="card">
+            <label for="model">Select AI Model:</label>
+            <select id="model">
+                <option value="0.3">GPT-4 (Large)</option>
+                <option value="0.1">Llama-3 (Medium)</option>
+                <option value="0.05">Mistral-7B (Small)</option>
+            </select>
+
+            <label for="region">Server Region:</label>
+            <select id="region">
+                <option value="708">India (Coal-heavy)</option>
+                <option value="384">USA (Gas/Mix)</option>
+                <option value="213">EU (Clean-mix)</option>
+                <option value="50">Sweden (Hydro/Nuclear)</option>
+            </select>
+
+            <button onclick="calculateCarbon()">Calculate Impact</button>
+        </div>
+
+        <div id="result-area" class="result-card hidden">
+            <h3>Carbon Result: <span id="carbon-value">0</span>g CO₂</h3>
+            <p id="analogy"></p>
+            <div id="recommendation" class="badge"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
